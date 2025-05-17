@@ -1,0 +1,52 @@
+export const cat = {
+    name: "Jess",
+    coat: "Tuxedo",
+    owner: "Ame",
+    skin: {
+       eat: ".assets/eating.jpg",
+       normal: ".assets/normal.jpg",
+       sleep: "./assets/sleeping.jpg"
+    },
+    element: document.createElement('img'),
+    width: 50,
+    height: 50,
+    x: 0,
+    y: 0,
+    speed: 10,
+    show: function(){
+        this.element.classList.add("cat");
+        this.default();
+        document.getElementById("arena").append(this.element);
+    },
+    normal: function () {
+        this.element.src = this.skin.normal;
+    },
+    sleep: function() {
+        this.element.src = this.skin.sleep;
+    },
+    eat: function () {
+        this.element.src = this.skin.eat;
+    },
+    getName: ()=>{
+        return this.name;
+    },
+    getOwner() {
+        return this.owner;
+    },
+    moveUp: function(y= this.speed){
+        this.y -= y;
+        this.element.style.left = `$(this.y)px;`
+    },
+    moveDown: function(y= this.speed){
+        this.y += y;
+        this.element.style.left = `$(this.y)px;`
+    },
+    moveLeft: function(x= this.speed){
+        this.x -= x;
+        this.element.style.left = `$(this.x)px;`
+    },
+    moveRight: function(x= this.speed){
+        this.x += x;
+        this.element.style.left = `$(this.x)px;`
+    }
+}
