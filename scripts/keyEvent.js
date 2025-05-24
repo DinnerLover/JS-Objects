@@ -3,6 +3,8 @@ export const checkKeyDown = () => {
     document.addEventListener('keydown', e => {
         if (e.key === 'z') {
             cat.sleep();
+        } else if (e.key === 'e') {
+            cat.eat();
         } else if (e.key === 'n') {
             cat.default();
         } else if (e.key === 'w') {
